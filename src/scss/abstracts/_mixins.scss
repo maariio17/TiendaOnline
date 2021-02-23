@@ -1,0 +1,55 @@
+@mixin navigation (){
+    display: grid;
+    justify-items: center;
+
+    a, i{
+        color: color(primary);
+        font-size: size(sm);
+    }
+}
+
+@mixin botonesCarrito(){
+    display: inline-block;
+    padding: .5em 1em;
+    font-family: inherit;
+    font-size: medium;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border: transparent;
+    border-radius: 2px;
+    margin: 3px;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* hacer responsive */
+@mixin response($breakpoint) {
+    @if($breakpoint == xl){
+        @media(min-width: 1200px){
+            @content;
+        }
+    }
+
+    @if($breakpoint == lg){
+        @media(min-width: 992px){
+            @content;
+        }
+    }
+
+    @if($breakpoint == md){
+        @media(min-width: 768px){
+            @content;
+        }
+    }
+
+    @if($breakpoint == sm){
+        @media(min-width: 576px){
+            @content;
+        }
+    }
+}
